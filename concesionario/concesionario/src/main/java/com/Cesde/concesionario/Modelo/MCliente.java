@@ -23,7 +23,7 @@ public class MCliente {
 
     // Relaciones entre clases
 
-    // conturctor
+    // constructor
 
 
     public MCliente(String idcliente, String nomcliente, String dircliente, String telcliente, Boolean activo) {
