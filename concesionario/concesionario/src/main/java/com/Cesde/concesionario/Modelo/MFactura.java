@@ -22,6 +22,18 @@ public class MFactura {
 
     // Relaciones entre tablas
 
+    //constructor
+
+    public MFactura(Boolean activo, String idcliente, LocalDate fecha, Integer codfactura) {
+        this.activo = activo;
+        this.idcliente = idcliente;
+        this.fecha = fecha;
+        this.codfactura = codfactura;
+    }
+
+    public MFactura() {
+    }
+
     // Encapsulamiento
     public Integer getCodfactura() {
         return codfactura;

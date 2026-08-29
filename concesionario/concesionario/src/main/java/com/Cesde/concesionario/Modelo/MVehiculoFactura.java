@@ -18,6 +18,18 @@ public class MVehiculoFactura {
 
     // Relacion entre las tablas
 
+    //constructor
+
+    public MVehiculoFactura(Integer consecutivo, Integer codfactura, String placa, Double valventa) {
+        this.consecutivo = consecutivo;
+        this.codfactura = codfactura;
+        this.placa = placa;
+        this.valventa = valventa;
+    }
+
+    public MVehiculoFactura() {
+    }
+
     // Encapsulamiento
     public Integer getConsecutivo() {
         return consecutivo;
