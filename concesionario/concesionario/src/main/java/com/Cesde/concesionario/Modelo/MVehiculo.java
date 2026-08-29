@@ -23,6 +23,18 @@ public class MVehiculo {
 
     // Relaciones entre tablas
 
+    //constructor
+    public MVehiculo(String placa, String marca, String modelo, Double valor, Boolean activo) {
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.valor = valor;
+        this.activo = activo;
+    }
+
+    public MVehiculo() {
+    }
+
     // Encapsulamiento
     public String getPlaca() {
         return placa;
