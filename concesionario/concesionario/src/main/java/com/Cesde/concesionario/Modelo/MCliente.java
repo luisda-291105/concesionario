@@ -23,6 +23,20 @@ public class MCliente {
 
     // Relaciones entre clases
 
+    // conturctor
+
+
+    public MCliente(String idcliente, String nomcliente, String dircliente, String telcliente, Boolean activo) {
+        this.idcliente = idcliente;
+        this.nomcliente = nomcliente;
+        this.dircliente = dircliente;
+        this.telcliente = telcliente;
+        this.activo = activo;
+    }
+
+    public MCliente() {
+    }
+
     // Encapsulamiento
     public String getIdcliente() {
         return idcliente;
