@@ -1,5 +1,6 @@
 package com.Cesde.concesionario.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,7 +18,11 @@ public class MVehiculoFactura {
     private Double valventa;
 
     // Relacion entre las tablas
-
+    /*@ManyToOne
+    @JoinColumn(name = "pkdetalle",referencedColumnName = "codfactura")
+    @JsonBackReference
+    private MFactura factura;
+*/
     //constructor
 
     public MVehiculoFactura(Integer consecutivo, Integer codfactura, String placa, Double valventa) {

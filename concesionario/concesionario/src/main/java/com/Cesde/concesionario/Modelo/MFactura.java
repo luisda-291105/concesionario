@@ -1,11 +1,11 @@
 package com.Cesde.concesionario.Modelo;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "factura")
@@ -21,6 +21,15 @@ public class MFactura {
     private Boolean activo;
 
     // Relaciones entre tablas
+    /*@ManyToOne
+    @JoinColumn(name="pkfactura",referencedColumnName = "idcliente")
+    @JsonBackReference
+    private MCliente clientes;
+*/
+    // Relacion entre las tablas de factura y vehiculofactura
+    /*@OneToMany(mappedBy = "factura")
+    @JsonManagedReference
+    private List<MVehiculoFactura> vehiculoFacturas;*/
 
     //constructor
 

@@ -1,9 +1,9 @@
 package com.Cesde.concesionario.Modelo;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "cliente")
@@ -22,10 +22,11 @@ public class MCliente {
     private Boolean activo;
 
     // Relaciones entre clases
+   /* @OneToMany(mappedBy = "cliente")
+    @JsonManagedReference
+    private List<MFactura> facturas;*/
 
     // constructor
-
-
     public MCliente(String idcliente, String nomcliente, String dircliente, String telcliente, Boolean activo) {
         this.idcliente = idcliente;
         this.nomcliente = nomcliente;

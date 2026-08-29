@@ -1,9 +1,9 @@
 package com.Cesde.concesionario.Modelo;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "vehiculo")
@@ -22,6 +22,9 @@ public class MVehiculo {
     private Boolean activo;
 
     // Relaciones entre tablas
+    /*@OneToMany(mappedBy = "vehiculo")
+    @JsonManagedReference
+    private List<MVehiculoFactura> vehiculoFacturas;*/
 
     //constructor
     public MVehiculo(String placa, String marca, String modelo, Double valor, Boolean activo) {
