@@ -21,6 +21,17 @@ public class MVehiculo {
     @Column(nullable = false)
     private Boolean activo;
 
+    public MVehiculo() {
+    }
+
+    public MVehiculo(String placa, String marca, String modelo, Double valor, Boolean activo) {
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.valor = valor;
+        this.activo = activo;
+    }
+
     // Relaciones entre tablas
 
     // Encapsulamiento
