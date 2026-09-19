@@ -1,10 +1,12 @@
 package com.Cesde.concesionario.Servicio;
 
+import com.Cesde.concesionario.Dto.FacturaClienteVehiculoDTO;
 import com.Cesde.concesionario.Modelo.MFactura;
 import com.Cesde.concesionario.Repositorio.IFactura;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,6 +62,35 @@ public class SFactura {
 		} catch (RuntimeException exception) {
 			throw new IllegalStateException("No se pudo consultar la factura", exception);
 		}
+	}
+
+	// Consultar facturas y vehículos comprados por un cliente
+	public List<FacturaClienteVehiculoDTO> consultarFacturasClienteConVehiculos(String idcliente) {
+		try {
+			return objIFactura.consultarFacturasClienteConVehiculos(idcliente).stream()
+					.map(this::convertirFacturaClienteVehiculo)
+					.toList();
+		} catch (RuntimeException exception) {
+			throw new IllegalStateException("No se pudieron consultar las facturas del cliente", exception);
+		}
+	}
+
+	private FacturaClienteVehiculoDTO convertirFacturaClienteVehiculo(Object[] datos) {
+		return new FacturaClienteVehiculoDTO(
+				(String) datos[0],
+				(String) datos[1],
+				((Number) datos[2]).intValue(),
+				convertirFecha(datos[3]),
+				(String) datos[4],
+				((Number) datos[5]).doubleValue(),
+				(String) datos[6]);
+	}
+
+	private LocalDate convertirFecha(Object fecha) {
+		if (fecha instanceof java.sql.Date fechaSql) {
+			return fechaSql.toLocalDate();
+		}
+		return (LocalDate) fecha;
 	}
 
 }
