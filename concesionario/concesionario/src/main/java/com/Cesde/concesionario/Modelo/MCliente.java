@@ -21,6 +21,17 @@ public class MCliente {
     @Column(nullable = false)
     private Boolean activo;
 
+    public MCliente() {
+    }
+
+    public MCliente(String idcliente, String nomcliente, String dircliente, String telcliente, Boolean activo) {
+        this.idcliente = idcliente;
+        this.nomcliente = nomcliente;
+        this.dircliente = dircliente;
+        this.telcliente = telcliente;
+        this.activo = activo;
+    }
+
     // Relaciones entre clases
 
     // Encapsulamiento

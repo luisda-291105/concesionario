@@ -16,6 +16,16 @@ public class MVehiculoFactura {
     @Column(nullable = false)
     private Double valventa;
 
+    public MVehiculoFactura() {
+    }
+
+    public MVehiculoFactura(Integer consecutivo, Integer codfactura, String placa, Double valventa) {
+        this.consecutivo = consecutivo;
+        this.codfactura = codfactura;
+        this.placa = placa;
+        this.valventa = valventa;
+    }
+
     // Relacion entre las tablas
 
     // Encapsulamiento

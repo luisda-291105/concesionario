@@ -1,3 +1,12 @@
+/* 
+configuracion 
+
+spring.application.name=concesionario
+spring.datasource.url=jdbc:mysql://localhost:3306/DBConcesionario
+spring.datasource.username=root
+spring.datasource.password=
+*/
+
 package com.Cesde.concesionario;
 
 import org.springframework.boot.SpringApplication;

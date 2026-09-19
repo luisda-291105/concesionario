@@ -20,6 +20,16 @@ public class MFactura {
     @Column(nullable = false)
     private Boolean activo;
 
+    public MFactura() {
+    }
+
+    public MFactura(Integer codfactura, LocalDate fecha, String idcliente, Boolean activo) {
+        this.codfactura = codfactura;
+        this.fecha = fecha;
+        this.idcliente = idcliente;
+        this.activo = activo;
+    }
+
     // Relaciones entre tablas
 
     // Encapsulamiento
